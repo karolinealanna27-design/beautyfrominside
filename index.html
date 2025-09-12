@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeBiome - Apoio Digestivo & Pele Saudável</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        .benefits {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .benefit-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .ingredients {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin: 40px 0;
+        }
+        .ingredients h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .ingredient {
+            text-align: center;
+            padding: 15px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        .offer-section {
+            background: #fff8e6;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 2px dashed #ffb74d;
+        }
+        .offer-section h2 {
+            color: #e65100;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .bonus {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .bonus h3 {
+            color: #d81b60;
+        }
+        .price-old {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .price-new {
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #e53935;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #c62828;
+        }
+        .guarantee {
+            text-align: center;
+            padding: 30px;
+            background: #e8f5e9;
+            border-radius: 10px;
+            margin: 40px 0;
+            border: 2px solid #4caf50;
+        }
+        .faq {
+            margin: 50px 0;
+        }
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .faq-item {
+            background: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+        .shipping-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .shipping-table th,
+        .shipping-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .shipping-table th {
+            background-color: #e3f2fd;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #333;
+            color: #fff;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        .disclaimer {
+            font-size: 0.85rem;
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffebee;
+            border-radius: 8px;
+            color: #c62828;
+        }
+        @media (max-width: 768px) {
+            .benefits {
+                flex-direction: column;
+                align-items: center;
+            }
+            .ingredient-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Skin-Gut Cell Turnover Breakthrough</h1>
+            <p class="subtitle">Skin cell turnover rejuvenates skin by replacing old cells with new ones. This process is important to maintain in order to support healthy aging, optimal gut health and for the appearance of healthy youthful skin. PrimeBiome supports beneficial bacteria, helping to promote better skin health and a more youthful appearance.</p>
+            
+            <div class="benefits">
+                <div class="benefit-tag">Dermal Balance</div>
+                <div class="benefit-tag">Digestive Support</div>
+                <div class="benefit-tag">Healthy Weight</div>
+            </div>
+        </header>
+
+        <div class="ingredients">
+            <h2>Inside every probiotic gummy of PrimeBiome, you’ll find:</h2>
+            <p>An optimally dosed proprietary <strong>blend of nourishing ingredients</strong>, carefully mixed to complement one another into a <strong>powerful formula</strong>.</p>
+            
+            <div class="ingredient-grid">
+                <div class="ingredient">B. Coagulans</div>
+                <div class="ingredient">Babchi</div>
+                <div class="ingredient">Dandelion</div>
+                <div class="ingredient">Fennel</div>
+                <div class="ingredient">Inulin</div>
+                <div class="ingredient">Fenugreek</div>
+                <div class="ingredient">Lemon Balm</div>
+                <div class="ingredient">Organic Ceylon Ginger</div>
+                <div class="ingredient">Organic Lion's Mane</div>
+                <div class="ingredient">Slippery Elm Bark</div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                Natural Formula • Non-GMO • Easy To Use • No Stimulants
+            </div>
+        </div>
+
+        <div class="offer-section">
+            <h2>Order <strong>6 Bottles</strong> and Get <strong>3 FREE Bonuses!</strong></h2>
+
+            <div class="bonus">
+                <h3>Bonus #1 - See You Never, Cellulite!</h3>
+                <p><span class="price-old">Retail Price - $55</span><br>
+                <span class="price-new">Today: FREE</span></p>
+                <p>Erase cellulite fast, naturally, and with no effort! In this e-book, you’ll find some unconventional and effective tips on how to finally get rid of the orange-peel skin.</p>
+            </div>
+
+            <div class="bonus">
+                <h3>Bonus #2 - Hello, Dazzling Hair!</h3>
+                <p><span class="price-old">Retail Price - $54</span><br>
+                <span class="price-new">Today: FREE</span></p>
+                <p>Grow thick, full & lustrous locks in no time! In this guide, you’ll see how easy getting healthy and strong hair can be if you follow a couple of homemade remedies.</p>
+            </div>
+
+            <div class="bonus">
+                <h3>Bonus #3 - White In a Flash!</h3>
+                <p><span class="price-old">Retail Price - $54</span><br>
+                <span class="price-new">Today: FREE</span></p>
+                <p>Quickly brighten your teeth with a simple brushing-trick that’s very popular among celebrities. Also learn about a strange ritual that will make you forget about teeth sensitivity for good.</p>
+            </div>
+
+            <p style="font-size: 1.3rem; font-weight: bold; margin: 20px 0;">Every 6 Bottles Order Gets <u>FREE Shipping</u> Too!</p>
+            <p style="font-style: italic; color: #555;">96% Of Customers Order 6 Bottles (Our Recommended Option)</p>
+
+            <a href="https://getprimebiome.com/text.php?hopId=5a7fa86f-1041-496e-8659-7d5fd4c884ff" class="cta-button">👉 Claim Your Discounted PrimeBiome Now</a>
+            <p style="font-size: 0.9rem; color: #d32f2f; font-weight: bold;">⚠️ While Stocks Last!</p>
+        </div>
+
+        <div class="guarantee">
+            <h3>100% Satisfaction 60-Day Money Back Guarantee</h3>
+            <p>Your order today is covered by our iron-clad <strong>60-day 100% money-back guarantee</strong>. If you are not impressed with the results, then just write to us and we’ll refund every single cent.</p>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How does PrimeBiome work?</div>
+                <div>PrimeBiome combines unique ingredients designed to support the cell turnover process by maintaining a healthy skin and gut microbiome. In turn, the new beneficial bacteria help promote a more youthful appearance.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What does the money-back guarantee mean?</div>
+                <div>Our money-back guarantee is a risk-free option we are offering you because we believe in this formula so much. It means you can try PrimeBiome for a full 60 days. And if you are not completely convinced by the amazing results, then you just get your money back.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why do most customers order 6 bottles?</div>
+                <div>Most of our clients order six bottles at a time, and many double their order because they want to enjoy the benefits of this amazing gut and skin health-supporting formula for as long as possible. It is a smart choice because those who buy the 6-bottle pack get a massive discount, free shipping, and 3 free online guides. That's a lot of value and savings.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I use PrimeBiome?</div>
+                <div>Simply take 1 probiotic gummy per day.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is this a subscription or one-time purchase?</div>
+                <div>Yes, your order is a one-off purchase with no hidden autoship, clauses, or charges. The price you see on the checkout page is the only price you will pay.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What’s inside each gummy?</div>
+                <div>In every single PrimeBiome gummy is a proprietary formula of scientifically proven, extra-strong ingredients, custom-made to support the health of your gut and skin.</div>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin: 40px 0 20px;">Shipping Information</h3>
+        <table class="shipping-table">
+            <tr>
+                <th>Delivery Address</th>
+                <th>Shipping Fee</th>
+                <th>Shipping Time</th>
+            </tr>
+            <tr>
+                <td>United States</td>
+                <td>FREE</td>
+                <td>5-7 working days</td>
+            </tr>
+            <tr>
+                <td>Canada</td>
+                <td>$15.95</td>
+                <td>10-15 working days</td>
+            </tr>
+            <tr>
+                <td>UK and Ireland</td>
+                <td>$15.95</td>
+                <td>10-15 working days</td>
+            </tr>
+            <tr>
+                <td>Australia and New Zealand</td>
+                <td>$15.95</td>
+                <td>10-15 working days</td>
+            </tr>
+        </table>
+
+        <a href="https://getprimebiome.com/text.php?hopId=5a7fa86f-1041-496e-8659-7d5fd4c884ff" class="cta-button">🔥 Claim Your Discounted PrimeBiome Now</a>
+        <p style="text-align: center; font-size: 0.9rem; color: #d32f2f; font-weight: bold; margin-top: 10px;">⏳ While Stocks Last!</p>
+
+        <div class="disclaimer">
+            <strong>This is an advertisement.</strong> Results may vary. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before beginning any supplement program.
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 PrimeBiome Affiliate Site. All rights reserved.</p>
+        <p><em>This site is independently owned and operated by an affiliate. Not the official website.</em></p>
+    </footer>
+</body>
+</html>
